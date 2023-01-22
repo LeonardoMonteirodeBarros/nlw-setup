@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*utilizaremos o * para dar inicio a organizaçao do nosso HTML
+  colocando marrgem, espaçamentos e bordas*/
+}
+
+body {
+  background-color: #09090a;
+  color: white;
+
+  height: 100vh;
+  /* como ficara o fundo da nossa pagina, e as escritas internas, e altura conforme 
+  solicitado ou desejado*/
+}
+
+header {
+  display: flex;
+  /*disposiçao dos elementos no caso IMG E BUTTON um ao lado do outro*/
+  align-items: center;
+  /*alinhando os elementos ao centro, img e button no caso*/
+  justify-content: space-between;
+  /*pega toda a largura do header e coloca espaço entre os elementos, no caso HABITS e BUTTON*/
+  padding: 48px;
+  /* preenchimento interno com uma propriedade
+  quando colocado assim, ele aplica para cima direita e esquerda e para baixo
+  (todas as direçoes) procurando organizar a pagina da maneira desejada/pedida*/
+
+  position: fixed;
+  width: 100%;
+  /* 100% devido a position fixed*/
+  background-color: #09090a;
+}
+
+button {
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid #8b5cf6;
+  background-color: transparent;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /*espaço entre os elementos, no caso no botao regristra meu dia, só posso usar
+  o gap quando estiver usando o display FLEX*/
+  font-family: "inter";
+  font-weight: 600;
+  /*family e weight, procuramos os valores selecionando a fonte, inspect
+  css, achar o tipo de font family e o valor da font-weight no site
+  fonts.google.com*/
+  font-size: 16px;
+  line-height: 125%;
+  /*valores sugeridos na propria pagina do APP, seguindo o mesmo destino q family e weight*/
+}
+
+#form-habits {
+  /*seletor de ID (rg), nao podemos repetir nomes, somente nas classes e nao no form*/
+  display: flex;
+  padding: 182px 48px 48px;
+  width: fit-content;
+  /* alinhando os recursos necessarios da forma do script 0 em cima e 48px lateral
+conforme no app*/
+}
+
+.habits {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.habit {
+  width: 64px;
+  height: 64px;
+  font-size: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days {
+  display: flex;
+  gap: 48px;
+  margin-left: 32px;
+  /*ajustando o espaço entre os icones e as caixas, como ja é flex posso colocar o gap*/
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  /*usando o flex para deixar um ao lado do outro conforme pedido
+  e usaremos o flex direction para colocar em colunas que precisaremos trabalhar*/
+}
+
+.day div {
+  margin-bottom: 8px;
+  font-family: "Roboto Mono";
+  font-size: 20px;
+  line-height: 125%;
+  color: #a1a1aa;
+  text-align: center;
+  /* pegando e selecionado todas as divs desse espaço referido, somando a margin e o gap
+  encontraremos 32 q precisamos de espaço */
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  /*precisamos usar o appearance e o webkit devido a forrma CHECKBOX que estamos usando
+  tirando a aparencia conseguimos utilizar os outros valores abaixos, e nao podemos esquecer do webkit 
+  pois varios navegadores precisam para a compreensao do script, no caso esse input esta sem o check*/
+
+  width: 64px;
+  height: 64px;
+  background: #18181b;
+  border: 2px solid #27272a;
+  border-radius: 8px;
+  /*valores de acordo com a pagina solicitada, e ao botton referido*/
+}
+
+/*pseudo selector, seleciona ou nao*/
+
+input:checked {
+  background: #8b5cf6;
+  border: 2px solid #a78bfa;
+}
